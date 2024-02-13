@@ -8,8 +8,12 @@
 
 int main(int argc, char *argv[]) {
     enum { BLACK = 30, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE };
-    Display d;
-    d.set_buff(fstr("Test",RED),0,0);
-    
+    fstr f("Test",BLUE);
+    std::cout << f.get_base() << std::endl;
+    std::cout << f.get_color() << std::endl;
+    std::cout << f.get_f() << std::endl;
+    std::string s = "\x1B[" + std::to_string(BLACK) + "m" + "Hello" + "\033[0m\n"; 
+    std::cout << s;
+    //printf("\x1B[31mTexting\033[0m\t\t");
     return 0;
 }
